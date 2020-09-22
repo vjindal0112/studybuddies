@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { Row, Col } from "react-grid-system";
 import Person from "./Person";
 import { Headshot, ContentDiv, SchoolLink } from "./styles";
+import ReactGA from "react-ga";
 
 const Button = styled.a`
   border: 4px solid #ffcb05;
@@ -179,7 +180,17 @@ export default function Home() {
             </Col>
             <Col>
               <Center>
-                <SchoolLink href="https://umichstudybuddies.com">
+                <SchoolLink
+                  target="_blank"
+                  href="https://umichstudybuddies.com"
+                  onClick={() => {
+                    ReactGA.event({
+                      category: "Navigation",
+                      action: "Click",
+                      label: "UMich",
+                    });
+                  }}
+                >
                   UMich
                 </SchoolLink>
               </Center>
@@ -191,7 +202,17 @@ export default function Home() {
             </Col>
             <Col>
               <Center>
-                <SchoolLink href="https://uchicago.studybuddies.ai">
+                <SchoolLink
+                  target="_blank"
+                  href="https://uchicago.studybuddies.ai"
+                  onClick={() => {
+                    ReactGA.event({
+                      category: "Navigation",
+                      action: "Click",
+                      label: "UChicago",
+                    });
+                  }}
+                >
                   UChicago
                 </SchoolLink>
               </Center>
@@ -203,7 +224,17 @@ export default function Home() {
             </Col>
             <Col>
               <Center>
-                <SchoolLink href="https://ucla.studybuddies.ai">
+                <SchoolLink
+                  target="_blank"
+                  href="https://ucla.studybuddies.ai"
+                  onClick={() => {
+                    ReactGA.event({
+                      category: "Navigation",
+                      action: "Click",
+                      label: "UCLA",
+                    });
+                  }}
+                >
                   UCLA
                 </SchoolLink>
               </Center>
