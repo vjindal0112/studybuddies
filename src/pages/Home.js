@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import logo from "../StudyBuddyLogo.png";
 import { Helmet } from "react-helmet";
+import { Row, Col } from "react-grid-system";
+import Person from "./Person";
+import { Headshot, ContentDiv, SchoolLink } from "./styles";
 
 const Button = styled.a`
   border: 4px solid #ffcb05;
@@ -21,11 +24,17 @@ const Heading = styled.h1`
     font-size: 40px;
   }
   padding: 10px;
+  font-weight: 300;
+  margin-top: 0px;
 `;
 
 const Logo = styled.img`
-  max-height: 40vh;
-  margin-top: 30px;
+  max-height: 30vh;
+  margin-top: 20px;
+`;
+
+const SchoolLogo = styled.img`
+  max-height: 16vh;
 `;
 
 const Section = styled.section`
@@ -74,10 +83,10 @@ const drop = keyframes`
 
 const Banner = styled.div`
   position: absolute;
-  top:0%;
+  top: 0%;
   width: 100%;
-  background-color: #FFCB05;
-  color: #00274C;
+  background-color: #ffcb05;
+  color: #00274c;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -85,21 +94,33 @@ const Banner = styled.div`
   font-weight: 600;
   animation: ${drop} 6s ease-out;
   opacity: 0;
-`
+`;
 
+const Subtitle = styled.h2`
+  font-size: 40px;
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+  padding: 10px;
+`;
 
+const Center = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+// const Card = styled.div`
+//   box-shadow: 3px 3px 3px #999;
+//   border-radius: 4px;
+//   padding: 10px;
+//   /* border: 2px solid #333; */
+
+// `
 
 export default function Home() {
-  const [userCount, setUserCount] = useState(6000);
-
-  // useEffect(() => {
-  //   fetch(
-  //     "https://script.google.com/macros/s/AKfycbxP3gykUXOcNunlc7uvzvwPiBcL1h44XzxSjsn3Vvu1vW0XB7U/exec"
-  //   )
-  //     .then((snapshot) => snapshot.json())
-  //     .then((num) => setUserCount(parseInt(num.number)));
-  // });
-
   return (
     <>
       <Helmet
@@ -145,10 +166,67 @@ export default function Home() {
         {/* <link rel="canonical" href="https://umichstudybuddies.com/" /> */}
       </Helmet>
       {/* <Banner>Only Open for SM 203!</Banner> */}
-      <div className="App" style={{ height: "88vh", minHeight: "88vh" }}>
+      <div className="header" style={{ height: "50vh", minHeight: "50vh" }}>
         <Logo src={logo} />
         <Heading>StudyBuddies</Heading>
-        </div>
+      </div>
+
+      <Section backgroundColor="#fefefe">
+        <ContentDiv>
+          <Row>
+            <Col>
+              <SchoolLogo src="/StudyBuddyLogo.png" />
+            </Col>
+            <Col>
+              <Center>
+                <SchoolLink href="https://umichstudybuddies.com">
+                  UMich
+                </SchoolLink>
+              </Center>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <SchoolLogo src="/UChicagoStudyBuddyLogo.png" />
+            </Col>
+            <Col>
+              <Center>
+                <SchoolLink href="https://uchicago.studybuddies.ai">
+                  UChicago
+                </SchoolLink>
+              </Center>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <SchoolLogo src="/UCLAStudyBuddyLogo.png" />
+            </Col>
+            <Col>
+              <Center>
+                <SchoolLink href="https://ucla.studybuddies.ai">
+                  UCLA
+                </SchoolLink>
+              </Center>
+            </Col>
+          </Row>
+        </ContentDiv>
+      </Section>
+      <Section backgroundColor="#f2f2f2">
+        <ContentDiv>
+          <Subtitle>The Team</Subtitle>
+          <Row>
+            <Person picUrl="./Varun.jpg" title="Varun Jindal" />
+            <Person picUrl="./Sam.jpg" title="Sam Forman" />
+          </Row>
+          <br />
+
+          <Subtitle>Marketing Directors</Subtitle>
+          <Row>
+            <Person picUrl="./Tarika.jpg" title="Tarika Mane" />
+            <Person picUrl="./Ankita.jpg" title="Ankita Katukota" />
+          </Row>
+        </ContentDiv>
+      </Section>
     </>
   );
 }
