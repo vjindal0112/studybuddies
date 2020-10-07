@@ -214,10 +214,10 @@ export default function Home() {
               "Get paired with study buddies in your class. We only match you with people we know you will vibe with.",
           },
           { name: "og:url", content: "https://studybuddies.ai" },
-          // {
-          //   name: "og:image",
-          //   content: "https://studybuddies.ai/SocialSharing.png",
-          // },
+          {
+            name: "og:image",
+            content: "https://studybuddies.ai/SocialSharing.png",
+          },
           {
             name: "twitter:url",
             content: "https://studybuddies.ai",
