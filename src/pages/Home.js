@@ -4,7 +4,13 @@ import logo from "../StudyBuddyLogo.png";
 import { Helmet } from "react-helmet";
 import { Row, Col } from "react-grid-system";
 import Person from "./Person";
-import { Headshot, ContentDiv, SchoolLink } from "./styles";
+import {
+  Headshot,
+  ContentDiv,
+  SchoolLink,
+  SchoolLogoDiv,
+  Header,
+} from "./styles";
 import ReactGA from "react-ga";
 
 const Button = styled.a`
@@ -19,28 +25,94 @@ const Button = styled.a`
   }
 `;
 
-const Heading = styled.h1`
-  font-size: 60px;
+const CenteredHeading = styled.h1`
+  font-size: 48px;
+  margin-bottom: 48px;
+  margin-top: 40px;
+  text-align: center;
+`;
+
+const Message = styled.h1`
+  font-size: 48px;
+  margin-bottom: 24px;
+  margin-top: 40px;
+  text-align: left;
+  padding-left: 80px;
+  padding-right: 80px;
+  @media (max-width: 1200px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   @media (max-width: 768px) {
-    font-size: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+`;
+
+const WorkImg = styled.img`
+  width: 40vw;
+  margin: 20px;
+  @media (max-width: 1200px) {
+    width: 50vw;
+  }
+  @media (max-width: 768px) {
+    width: 80vw;
+  }
+`;
+
+const SubMessage = styled.p`
+  padding-left: 80px;
+  padding-right: 80px;
+  @media (max-width: 1200px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: left;
+  color: #555;
+`;
+
+const Heading = styled.h1`
+  font-size: 40px;
+  @media (max-width: 768px) {
+    font-size: 24px;
   }
   padding: 10px;
   font-weight: 300;
-  margin-top: 0px;
+  margin: 0;
 `;
 
 const Logo = styled.img`
-  max-height: 30vh;
-  margin-top: 20px;
+  max-height: 10vh;
+  margin: 0 28px;
+  margin-left: 90px;
+  @media (max-width: 1200px) {
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  @media (max-width: 768px) {
+    margin-left: 0px;
+    margin-right: 20px;
+  }
+  /* margin-top: 20px; */
 `;
 
 const SchoolLogo = styled.img`
-  max-height: 16vh;
+  max-height: ${(props) => props.mheight};
 `;
 
 const Section = styled.section`
   text-align: center;
   padding: 50px;
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
   color: #333;
   background-color: ${(props) => props.backgroundColor};
 `;
@@ -167,20 +239,34 @@ export default function Home() {
         {/* <link rel="canonical" href="https://umichstudybuddies.com/" /> */}
       </Helmet>
       {/* <Banner>Only Open for SM 203!</Banner> */}
-      <div className="header" style={{ height: "50vh", minHeight: "50vh" }}>
+      <Header>
         <Logo src={logo} />
         <Heading>StudyBuddies</Heading>
-      </div>
+      </Header>
 
-      <Section backgroundColor="#fefefe">
+      <Section backgroundColor="#fafafd">
+        <Row>
+          <Col>
+            <Message>Find Buddies to Study With</Message>
+            <SubMessage>
+              Zoom classes make it tough to find a study group. Sign up and get
+              matched with people you vibe with.
+            </SubMessage>
+          </Col>
+          <Col>
+            <WorkImg src="work_time.svg" />
+          </Col>
+        </Row>
         <ContentDiv>
+          <CenteredHeading>The Colleges</CenteredHeading>
           <Row>
-            <Col>
+            {/* <Col>
               <SchoolLogo src="/StudyBuddyLogo.png" />
-            </Col>
+            </Col> */}
             <Col>
               <Center>
-                <SchoolLink
+                <SchoolLogoDiv
+                  bgColor="#00274C"
                   target="_blank"
                   href="https://umichstudybuddies.com"
                   onClick={() => {
@@ -191,18 +277,17 @@ export default function Home() {
                     });
                   }}
                 >
-                  UMich
-                </SchoolLink>
+                  <SchoolLogo mheight="60px" src="./blockM.png" />
+                </SchoolLogoDiv>
               </Center>
             </Col>
-          </Row>
-          <Row>
-            <Col>
+            {/* <Col>
               <SchoolLogo src="/UChicagoStudyBuddyLogo.png" />
-            </Col>
+            </Col> */}
             <Col>
               <Center>
-                <SchoolLink
+                <SchoolLogoDiv
+                  bgColor="#D6D6CE"
                   target="_blank"
                   href="https://uchicago.studybuddies.ai"
                   onClick={() => {
@@ -213,18 +298,17 @@ export default function Home() {
                     });
                   }}
                 >
-                  UChicago
-                </SchoolLink>
+                  <SchoolLogo mheight="80px" src="./uchicagoShield.png" />
+                </SchoolLogoDiv>
               </Center>
             </Col>
-          </Row>
-          <Row>
-            <Col>
+            {/* <Col>
               <SchoolLogo src="/UCLAStudyBuddyLogo.png" />
-            </Col>
+            </Col> */}
             <Col>
               <Center>
-                <SchoolLink
+                <SchoolLogoDiv
+                  bgColor="#2774AE"
                   target="_blank"
                   href="https://ucla.studybuddies.ai"
                   onClick={() => {
@@ -235,14 +319,14 @@ export default function Home() {
                     });
                   }}
                 >
-                  UCLA
-                </SchoolLink>
+                  <SchoolLogo mheight="40px" src="./ucla.png" />
+                </SchoolLogoDiv>
               </Center>
             </Col>
           </Row>
         </ContentDiv>
       </Section>
-      <Section backgroundColor="#f2f2f2">
+      <Section backgroundColor="#f2f2f6">
         <ContentDiv>
           <Subtitle>The Team</Subtitle>
           <Row>

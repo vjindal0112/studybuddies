@@ -1,12 +1,3 @@
-.header {
-  text-align: center;
-  background-image:linear-gradient(#006ed8,#006ed8);/*#00a0f9); */
-  color: #fafafa;
-  /* display: flex;
-  align-items:center; */
-  font-family: Futura;
-  font-weight: 400;
-}
 
 .App-logo {
   height: 40vmin;
