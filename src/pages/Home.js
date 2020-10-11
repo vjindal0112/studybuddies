@@ -267,6 +267,7 @@ export default function Home() {
               <Center>
                 <SchoolLogoDiv
                   bgColor="#00274C"
+                  hoverColor="#00577C"
                   target="_blank"
                   href="https://umichstudybuddies.com"
                   onClick={() => {
@@ -288,6 +289,7 @@ export default function Home() {
               <Center>
                 <SchoolLogoDiv
                   bgColor="#D6D6CE"
+                  hoverColor="#F6F6F2"
                   target="_blank"
                   href="https://uchicago.studybuddies.ai"
                   onClick={() => {
@@ -309,6 +311,8 @@ export default function Home() {
               <Center>
                 <SchoolLogoDiv
                   bgColor="#2774AE"
+                  hoverColor="#4794CE"
+                  style={{"fontFamily": "Helvetica", "textDecoration": "none", "fontWeight": "600", "fontSize": "24px", "color": "#fafafa", "letterSpacing": ".5px"}}
                   target="_blank"
                   href="https://ucla.studybuddies.ai"
                   onClick={() => {
@@ -319,7 +323,7 @@ export default function Home() {
                     });
                   }}
                 >
-                  <SchoolLogo mheight="40px" src="./ucla.png" />
+                  UCLA
                 </SchoolLogoDiv>
               </Center>
             </Col>
