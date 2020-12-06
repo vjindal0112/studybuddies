@@ -244,7 +244,7 @@ export default function Home() {
         <Heading>StudyBuddies</Heading>
       </Header>
 
-      <Section backgroundColor="#fafafd">
+      <Section backgroundColor="#fff">
         <Row>
           <Col>
             <Message>Find Buddies to Study With</Message>
