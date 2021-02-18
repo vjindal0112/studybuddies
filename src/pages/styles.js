@@ -17,8 +17,8 @@ export const Header = styled.div`
 
 export const Headshot = styled.img`
   border-radius: 50%;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
 `;
 
 export const ContentDiv = styled.div`

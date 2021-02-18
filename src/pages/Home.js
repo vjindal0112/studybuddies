@@ -312,7 +312,14 @@ export default function Home() {
                 <SchoolLogoDiv
                   bgColor="#2774AE"
                   hoverColor="#4794CE"
-                  style={{"fontFamily": "Helvetica", "textDecoration": "none", "fontWeight": "600", "fontSize": "24px", "color": "#fafafa", "letterSpacing": ".5px"}}
+                  style={{
+                    fontFamily: "Helvetica",
+                    textDecoration: "none",
+                    fontWeight: "600",
+                    fontSize: "24px",
+                    color: "#fafafa",
+                    letterSpacing: ".5px",
+                  }}
                   target="_blank"
                   href="https://ucla.studybuddies.ai"
                   onClick={() => {
@@ -343,6 +350,13 @@ export default function Home() {
           <Row>
             <Person picUrl="./Tarika.jpg" title="Tarika Mane" />
             <Person picUrl="./Ankita.jpg" title="Ankita Katukota" />
+          </Row>
+          <Row>
+            <Person picUrl="./Bradley.jpg" title="Bradley Harrison" />
+          </Row>
+          <Subtitle>Engineers</Subtitle>
+          <Row>
+            <Person picUrl="./Jacob.jpg" title="Jacob Stanley" />
           </Row>
         </ContentDiv>
       </Section>
