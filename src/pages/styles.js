@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Blue } from "../constants";
+import { Link } from "react-router-dom";
 
 export const Header = styled.div`
   background-image: ${`linear-gradient(${Blue}, ${Blue})`}; /*#00a0f9); */
@@ -56,5 +57,51 @@ export const SchoolLogoDiv = styled.a`
 
   &:hover {
     background-color: ${(props) => props.hoverColor};
+  }
+`;
+
+
+// STARTING PRIVACY AND TERMS STYLES
+
+export const Logo = styled.img`
+  max-height: 30vh;
+  margin-top: 18px;
+`;
+
+export const Texth1 = styled.h1`
+  font-size: 32px;
+  text-align: center;
+  @media (max-width: 768px) {
+    font-size: 32px;
+    font-weight: 300;
+  }
+`;
+
+export const Button = styled(Link)`
+  border: 4px solid ${Blue};
+  padding: 4px 8px;
+  color: #333;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0);
+  text-decoration: none;
+
+  transition: all 0.2s;
+  &:hover {
+    background-color: ${Blue};
+    color: white;
+  }
+`;
+
+export const List = styled.li`
+  font-size: 20px;
+  text-align: left;
+`;
+
+export const Wrapper = styled.div`
+  margin: auto;
+  max-width: 50%;
+  width: 50%;
+  @media (max-width: 768px) {
+    max-width: 90%;
   }
 `;

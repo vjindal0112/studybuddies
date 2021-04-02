@@ -1,29 +1,15 @@
-import React, { useState, useEffect } from "react";
-import styled, { keyframes } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import logo from "../StudyBuddyLogo.png";
 import { Helmet } from "react-helmet";
 import { Row, Col } from "react-grid-system";
 import Person from "./Person";
 import {
-  Headshot,
   ContentDiv,
-  SchoolLink,
   SchoolLogoDiv,
   Header,
 } from "./styles";
 import ReactGA from "react-ga";
-
-const Button = styled.a`
-  border: 4px solid #ffcb05;
-  padding: 12px;
-  margin: 24px;
-  color: #fafafa;
-
-  transition: all 0.5s;
-  &:hover {
-    background-color: #ffcb05;
-  }
-`;
 
 const CenteredHeading = styled.h1`
   font-size: 48px;
@@ -100,7 +86,6 @@ const Logo = styled.img`
     margin-left: 0px;
     margin-right: 20px;
   }
-  /* margin-top: 20px; */
 `;
 
 const SchoolLogo = styled.img`
@@ -117,57 +102,6 @@ const Section = styled.section`
   background-color: ${(props) => props.backgroundColor};
 `;
 
-const TextDiv = styled.div`
-  max-width: 40em;
-  margin: 0 auto;
-  font-size: 18px;
-  text-align: justify;
-  text-justify: inter-word;
-`;
-
-const UserCount = styled.div`
-  margin: 0px 8px;
-  color: #ffcb05;
-  font-weight: 800;
-`;
-
-const drop = keyframes`
-  0% {
-    height: 0px;
-    opacity: 0;
-  }
-
-  20% {
-    height: 40px;
-    opacity: 1;
-  }
-
-  90% {
-    height: 40px;
-    opacity: 1;
-  }
-
-  100% {
-    height: 0px;
-    opacity: 0;
-    display: none;
-  }
-`;
-
-const Banner = styled.div`
-  position: absolute;
-  top: 0%;
-  width: 100%;
-  background-color: #ffcb05;
-  color: #00274c;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  animation: ${drop} 6s ease-out;
-  opacity: 0;
-`;
 
 const Subtitle = styled.h2`
   font-size: 40px;
@@ -184,14 +118,6 @@ const Center = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
-// const Card = styled.div`
-//   box-shadow: 3px 3px 3px #999;
-//   border-radius: 4px;
-//   padding: 10px;
-//   /* border: 2px solid #333; */
-
-// `
 
 export default function Home() {
   return (
